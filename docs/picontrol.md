@@ -115,3 +115,7 @@ we have not worried about this minor inconsistency,
 for more details, see https://github.com/PCMDI/input4MIPs_CVs/issues/184).
 These piControl files can be identified by the fact 
 that they have "fx" in their filename.
+
+## Getting the data
+
+<!--- TODO: auto-generate a script showing how to download the data using esgpull -->

@@ -107,3 +107,7 @@ If you have a choice,
 we recommend using the [TODO recommendation].
 Whichever frequency you use, please document this clearly
 in [TODO recommendation about how to document].
+
+## Getting the data
+
+<!--- TODO: auto-generate a script showing how to download the data using esgpull -->

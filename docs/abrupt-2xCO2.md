@@ -25,3 +25,7 @@ The experiment should branch from the piControl experiment.
 Atmospheric CO<sub>2</sub> concentrations 
 which are double the value used in the piControl experiment should be applied.
 No other forcings should be altered from their piControl values.
+
+## Getting the data
+
+<!--- TODO: auto-generate a script showing how to download the data using esgpull -->
