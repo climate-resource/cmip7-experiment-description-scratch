@@ -11,5 +11,8 @@ theme: readthedocs
 nav:
   - Home: index.md
   - Experiment overviews:
+    # TODO: auto-generate this using literate-nav
     - piControl: picontrol.md
+    - abrupt-4xCO2: abrupt-4xCO2.md
+    - abrupt-2xCO2: abrupt-2xCO2.md
     - historical: historical.md

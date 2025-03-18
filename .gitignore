@@ -1,1 +1,4 @@
 venv
+
+# Excel temporary files
+*~$*
