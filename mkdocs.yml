@@ -1,6 +1,6 @@
 site_name: CMIP7 experiment description scratch
 site_description: Scratch repository for testing out building of CMIP7 experiment definition docs.
-site_url: http://TODO
+site_url: https://cmip7-experiment-description-scratch.readthedocs.io
 edit_uri: blob/main/docs/
 
 repo_name: climate-resource/cmip7-experiment-description-scratch
