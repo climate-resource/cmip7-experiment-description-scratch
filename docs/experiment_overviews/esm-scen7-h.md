@@ -21,6 +21,7 @@ High emission scenario to explore potential high-end impacts
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-hist
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

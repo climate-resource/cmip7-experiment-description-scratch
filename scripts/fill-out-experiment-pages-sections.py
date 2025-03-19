@@ -82,11 +82,37 @@ def get_experiment_longer_description(
     return "\n".join(longer_description_l), start_position + i
 
 
+def get_label(in_id: str) -> str:
+    """
+    Get a label from its ID
+    """
+    # This doesn't feel very portable to me, but maybe it is?
+    cv_location, tmp = in_id.split(":")
+    facet, id = tmp.split("/")
+
+    url_base = f"{cmipld.locations.mapping[cv_location]}/{facet}"
+    GRAPH_URL = f"{url_base}/graph.jsonld"
+    CONTEXT_URL = f"{url_base}/_context_"
+
+    data_facet = cmipld.jsonld.frame(GRAPH_URL, CONTEXT_URL)
+    info_l = [v for v in data_facet["@graph"] if v["label"] == id]
+    if len(info_l) != 1:
+        raise AssertionError
+
+    info = info_l[0]
+
+    return info["label"]
+
+
 @define
 class OtherExperimentInfo:
     """Other experiment info that may or may not be missing"""
 
     parent_experiment: str | None = None
+    """Parent experiment"""
+
+    parent_experiment_activity: str | None = None
+    """Parent experiment activity"""
 
 
 def get_other_experiment_info(
@@ -129,6 +155,9 @@ class ExperimentDescriptionFile:
 
     parent_experiment: str | None
     """Parent experiment of this experiment"""
+
+    parent_experiment_activity: str | None
+    """Parent experiment activity"""
 
     forcings_section: str
     """
@@ -229,10 +258,10 @@ class ExperimentDescriptionFile:
         ]
 
         if self.parent_experiment is not None:
-            out_l.extend(
-                [
-                    f"Parent experiment: {self.parent_experiment}",
-                ]
+            out_l.append(f"Parent experiment: {self.parent_experiment}")
+        if self.parent_experiment_activity is not None:
+            out_l.append(
+                f"Parent experiment activity: {self.parent_experiment_activity}"
             )
 
         out_l.extend(
@@ -289,10 +318,14 @@ def main() -> None:
         if isinstance(parent_experiment_info, str):
             if parent_experiment_info == "cmip7:experiment/none":
                 info["parent_experiment"] = None
+                info["parent_experiment_activity"] = None
             else:
                 raise NotImplementedError(parent_experiment_info)
         else:
             info["parent_experiment"] = entry["parent-experiment"]["label"]
+            info["parent_experiment_activity"] = get_label(
+                entry["parent-activity"]["id"]
+            )
             # # Not sure how to process this sensibly, will need to ask Dan
             # info["parent_experiment_activity"] = (
             # entry["parent-experiment"]["activity"])

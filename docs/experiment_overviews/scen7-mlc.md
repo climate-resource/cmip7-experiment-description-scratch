@@ -21,6 +21,7 @@ Concentration driven scenario with delayed increase in mitigation effort, insuff
 
 <!--- Start other-experiment-info -->
 Parent experiment: historical
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

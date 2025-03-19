@@ -21,6 +21,7 @@ Scenario extension consistent with staying likely below 2 degrees C
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-scen7-l
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

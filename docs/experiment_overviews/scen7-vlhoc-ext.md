@@ -21,6 +21,7 @@ Extension to Concentration driven scenario with similar end-of-century temperatu
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-vlhoc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

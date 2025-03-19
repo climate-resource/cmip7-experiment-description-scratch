@@ -21,6 +21,7 @@ Extension to concentration driven scenario with delayed increase in mitigation e
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-mlc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

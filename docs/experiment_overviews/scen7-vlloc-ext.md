@@ -21,6 +21,7 @@ Extension to Concentration driven scenario consistent with limiting warming to 1
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-vlloc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

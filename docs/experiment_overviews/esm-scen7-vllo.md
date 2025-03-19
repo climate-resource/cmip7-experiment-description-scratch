@@ -21,6 +21,7 @@ Scenario consistent with limiting warming to 1.5 degree C by 2100 AD with limite
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-hist
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

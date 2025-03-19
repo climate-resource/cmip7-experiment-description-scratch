@@ -21,6 +21,7 @@ Extension to scenario with delayed increase in mitigation effort, insufficient t
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-scen7-ml
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

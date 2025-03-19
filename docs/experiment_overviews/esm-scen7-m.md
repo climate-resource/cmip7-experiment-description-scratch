@@ -21,6 +21,7 @@ Medium emission scenario consistent with current policies
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-hist
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

@@ -21,6 +21,7 @@ Concentration driven scenario consistent with limiting warming to 1.5 degree C b
 
 <!--- Start other-experiment-info -->
 Parent experiment: historical
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

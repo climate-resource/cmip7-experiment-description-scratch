@@ -21,6 +21,7 @@ Extension to scenario with similar end-of-century temperature impact to VLLO, bu
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-scen7-vlho
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

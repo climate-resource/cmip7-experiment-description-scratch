@@ -21,6 +21,7 @@ Scenario with delayed increase in mitigation effort, insufficient to meet Paris 
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-hist
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

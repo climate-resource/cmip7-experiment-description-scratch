@@ -21,6 +21,7 @@ Medium emission scenario extension consistent with current policies
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-scen7-m
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

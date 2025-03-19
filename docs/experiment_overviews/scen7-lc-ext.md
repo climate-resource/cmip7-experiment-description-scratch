@@ -21,6 +21,7 @@ Extension to concentration driven scenario consistent with staying likely below 
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-lc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

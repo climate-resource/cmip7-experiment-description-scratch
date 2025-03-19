@@ -21,6 +21,7 @@ Scenario with similar endof-century temperature impact to VLLO, but with less ag
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-hist
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

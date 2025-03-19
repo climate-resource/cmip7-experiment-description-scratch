@@ -21,6 +21,7 @@ High emission scenario overshoot extension to explore potential high-end impacts
 
 <!--- Start other-experiment-info -->
 Parent experiment: esm-scen7-h
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

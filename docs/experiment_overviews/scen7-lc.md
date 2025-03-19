@@ -21,6 +21,7 @@ Concentration driven scenario consistent with staying likely below 2 degrees C
 
 <!--- Start other-experiment-info -->
 Parent experiment: historical
+Parent experiment activity: CMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

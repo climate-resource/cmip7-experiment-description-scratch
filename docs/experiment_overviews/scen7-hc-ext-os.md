@@ -21,6 +21,7 @@ High concentration driven emission scenario overshoot extension to explore poten
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-hc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings

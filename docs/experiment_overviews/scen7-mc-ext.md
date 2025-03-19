@@ -21,6 +21,7 @@ Medium concentration driven emission scenario extension consistent with current 
 
 <!--- Start other-experiment-info -->
 Parent experiment: scen7-mc
+Parent experiment activity: ScenarioMIP
 <!--- End other-experiment-info -->
 
 ## Forcings
