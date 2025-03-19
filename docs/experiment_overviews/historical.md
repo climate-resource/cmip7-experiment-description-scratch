@@ -1,11 +1,11 @@
 <!--- TODO: auto-generate this header -->
-# piControl
+# historical
 
 <!--- TODO: pull this from some common machine-readable file -->
-Short description: Simulation of the climate before large-scale industrialisation.
+Short description: Simulation of the recent past from 1 Jan 1850 to 31 Dec 2021.
 
 <!--- TODO: pull this from some common machine-readable file -->
-Long description: Simulation of the climate before large-scale industrialisation.
+Long description: Simulation of the recent past from 1 Jan 1850 to 31 Dec 2021.
 More text would go here.
 If pulling from machine-readable then this can only be text.
 More fancy stuff would have to be in here directly.
@@ -28,26 +28,29 @@ In this experiment, forcings with the following source IDs should be used:
 
 <!--- TODO?: auto-generate this from some common machine-readable file? -->
 
-The experiment should branch from the piControl-spinup experiment.
+The experiment should branch from the piControl experiment.
 
 #### Biomass burning emissions
 
-These come from DRES 
+These come from DRES
 (i.e. use data with DRES in the source ID).
 A number of species are provided.
 If these do not suit your model,
 please raise an issue ([TODO issue raising link]).
 
-Repeat the 1850 values on repeat for piControl.
+The data are provided in two flavours:
 
-[TODO figure out whether raw vs. smoothed matters]
+1. raw
+1. smoothed
+
+We recommend using the [TODO recommendation] flavour.
+Whichever flavour you use, please document this clearly
+in [TODO recommendation about how to document].
 
 #### Greenhouse gas concentrations
 
 These come from CR
 (i.e. use data with CR in the source ID).
-
-Repeat the 1850 values on repeat for piControl.
 
 ##### Species choices
 
@@ -70,34 +73,21 @@ Use CO2, CH4, N2O and CFC12-eq and HFC134a-eq.
 ##### Grids and frequencies
 
 The data is provided on multiple grids and frequencies.
-For the piControl experiment,
-only the yearly frequency data should be used
-(the monthly frequency data includes a trend
-so cannot be used as the basis for repeating inputs
-as there will be a discontinuity from Dec 31 to Jan 1
-in each year).
-Please use the grid that best suits your model.
+Please use the grid and frequency that best suits your model.
 
 If you have a choice,
-we recommend using the grid that matches the grid you will use during the historical
-(unless that is the 15-degree grid, 
-in which case you will have to do piControl with one of the grids 
-that is provided at yearly frequency 
-then switch to the monthly frequency data for the historical simulation).
-Whichever grid you use, please document this clearly
+we recommend using the monthly data on the 15-degree latitudinal grid.
+Whichever grid and frequency you use, please document this clearly
 in [TODO recommendation about how to document].
 
 #### Volcanic forcing
 
-This is provided by the University of Exeter 
+This is provided by the University of Exeter
 (i.e. use data with UOEXETER in the source ID).
 Both stratospheric aerosol properties as well as volcanic emissions are provided.
 Please use the inputs which suit your model.
 Please document which inputs you used
 in [TODO recommendation about how to document].
-
-For the piControl, there are dedicated climatology files.
-These can be identified by the fact that they have "clim" in their filename.
 
 #### Solar forcing
 
@@ -108,13 +98,15 @@ Please use the inputs which suit your model.
 Please document which inputs you used
 in [TODO recommendation about how to document].
 
-For the piControl, there are dedicated piControl files.
-These are identified as being fixed fields
-(they're actually climatologies, but to avoid breaking things
-we have not worried about this minor inconsistency,
-for more details, see https://github.com/PCMDI/input4MIPs_CVs/issues/184).
-These piControl files can be identified by the fact 
-that they have "fx" in their filename.
+##### Frequencies
+
+The data is provided at both a monthly and a daily frequency.
+Please use the frequency that best suits your model.
+
+If you have a choice,
+we recommend using the [TODO recommendation].
+Whichever frequency you use, please document this clearly
+in [TODO recommendation about how to document].
 
 ## Getting the data
 
