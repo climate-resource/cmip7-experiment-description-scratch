@@ -18,7 +18,6 @@ DECK: abrupt quadrupling of CO2
  Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
 <!--- End longer-description -->
 
-
 ## Other experiment info
 
 <!--- Start other-experiment-info -->

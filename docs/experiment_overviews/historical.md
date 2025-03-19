@@ -1,18 +1,32 @@
-<!--- TODO: auto-generate this header -->
+<!--- This file contains a number of sections -->
+<!--- They are bounded by comments like this -->
+<!--- Do not edit these sections by hand -->
+<!--- Start title -->
 # historical
+<!--- End title -->
 
-<!--- TODO: pull this from some common machine-readable file -->
-Short description: Simulation of the recent past from 1 Jan 1850 to 31 Dec 2021.
+## One-line description
 
-<!--- TODO: pull this from some common machine-readable file -->
-Long description: Simulation of the recent past from 1 Jan 1850 to 31 Dec 2021.
-More text would go here.
-If pulling from machine-readable then this can only be text.
-More fancy stuff would have to be in here directly.
+<!--- Start one-line-description -->
+Describe historical in one sentence.
+<!--- End one-line-description -->
+
+## Longer description
+
+<!--- Start longer-description -->
+DECK: historical
+ Simulation of the recent past
+<!--- End longer-description -->
+
+## Other experiment info
+
+<!--- Start other-experiment-info -->
+Parent experiment: cmip7:experiment/none
+<!--- End other-experiment-info -->
 
 ## Forcings
 
-<!--- TODO: auto-generate this from some common machine-readable file -->
+<!--- Start forcings -->
 ### Source IDs
 
 In this experiment, forcings with the following source IDs should be used:
@@ -107,7 +121,8 @@ If you have a choice,
 we recommend using the [TODO recommendation].
 Whichever frequency you use, please document this clearly
 in [TODO recommendation about how to document].
+<!--- End forcings -->
 
-## Getting the data
+## Generating the data
 
-<!--- TODO: auto-generate a script showing how to download the data using esgpull -->
+<!--- TODO: auto-generate this -->

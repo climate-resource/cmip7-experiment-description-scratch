@@ -223,7 +223,6 @@ class ExperimentDescriptionFile:
             self.experiment_longer_description,
             "<!--- End longer-description -->",
             "",
-            "",
             "## Other experiment info",
             "",
             "<!--- Start other-experiment-info -->",
@@ -267,7 +266,9 @@ def main() -> None:
     experiment_files_l = []
     for entry in data["@graph"]:
         experiment_name = entry["label"]
-        if not experiment_name.startswith("abrupt"):
+        if not experiment_name.startswith("abrupt") and not experiment_name.startswith(
+            "historical"
+        ):
             continue
 
         doc_file = DOCS_DIR / "experiment_overviews" / f"{experiment_name}.md"

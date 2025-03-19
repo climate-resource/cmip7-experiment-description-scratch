@@ -18,7 +18,6 @@ Abrupt halving of CO2
  Abrupt halving of atmospheric CO2
 <!--- End longer-description -->
 
-
 ## Other experiment info
 
 <!--- Start other-experiment-info -->
