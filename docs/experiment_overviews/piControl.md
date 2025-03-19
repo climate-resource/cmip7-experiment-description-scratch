@@ -1,18 +1,32 @@
-<!--- TODO: auto-generate this header -->
+<!--- This file contains a number of sections -->
+<!--- They are bounded by comments like this -->
+<!--- Do not edit these sections by hand -->
+<!--- Start title -->
 # piControl
+<!--- End title -->
 
-<!--- TODO: pull this from some common machine-readable file -->
-Short description: Simulation of the climate before large-scale industrialisation.
+## One-line description
 
-<!--- TODO: pull this from some common machine-readable file -->
-Long description: Simulation of the climate before large-scale industrialisation.
-More text would go here.
-If pulling from machine-readable then this can only be text.
-More fancy stuff would have to be in here directly.
+<!--- Start one-line-description -->
+Describe piControl in one sentence.
+<!--- End one-line-description -->
+
+## Longer description
+
+<!--- Start longer-description -->
+DECK: pre-industrial control
+ Pre-industrial control simulation
+<!--- End longer-description -->
+
+## Other experiment info
+
+<!--- Start other-experiment-info -->
+Parent experiment: cmip7:experiment/none
+<!--- End other-experiment-info -->
 
 ## Forcings
 
-<!--- TODO: auto-generate this from some common machine-readable file -->
+<!--- Start forcings -->
 ### Source IDs
 
 In this experiment, forcings with the following source IDs should be used:
@@ -115,7 +129,8 @@ we have not worried about this minor inconsistency,
 for more details, see https://github.com/PCMDI/input4MIPs_CVs/issues/184).
 These piControl files can be identified by the fact
 that they have "fx" in their filename.
+<!--- End forcings -->
 
-## Getting the data
+## Generating the data
 
-<!--- TODO: auto-generate a script showing how to download the data using esgpull -->
+<!--- TODO: auto-generate this -->

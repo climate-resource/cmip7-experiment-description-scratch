@@ -266,8 +266,10 @@ def main() -> None:
     experiment_files_l = []
     for entry in data["@graph"]:
         experiment_name = entry["label"]
-        if not experiment_name.startswith("abrupt") and not experiment_name.startswith(
-            "historical"
+        if (
+            not experiment_name.startswith("abrupt")
+            and not experiment_name.startswith("historical")
+            and not experiment_name.startswith("piControl")
         ):
             continue
 
