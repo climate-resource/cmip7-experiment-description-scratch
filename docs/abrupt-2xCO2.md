@@ -1,31 +1,11 @@
-<!--- TODO: auto-generate this header -->
+<!--- This file contains a number of sections -->
+<!--- They are bounded by comments like this -->
+<!--- Do not edit these sections by hand -->
 # abrupt-2xCO2
 
-<!--- TODO: pull this from some common machine-readable file -->
-Short description: Abrupt doubling of atmospheric CO<sub>2</sub> concentrations relative to pre-industrial.
+## One-line description
+Describe abrupt-2xCO2 in one sentence.
 
-<!--- TODO: pull this from some common machine-readable file -->
-Long description: Abrupt doubling of atmospheric CO<sub>2</sub> concentrations relative to pre-industrial.
-More text would go here.
-
-## Forcings
-
-<!--- TODO: auto-generate this from some common machine-readable file -->
-### Source IDs
-
-In this experiment, forcings with the following source IDs should be used:
-
-- CR-CMIP-1-0-0
-
-### Implementation details
-
-<!--- TODO?: auto-generate this from some common machine-readable file? -->
-
-The experiment should branch from the piControl experiment.
-Atmospheric CO<sub>2</sub> concentrations 
-which are double the value used in the piControl experiment should be applied.
-No other forcings should be altered from their piControl values.
-
-## Getting the data
-
-<!--- TODO: auto-generate a script showing how to download the data using esgpull -->
+## Longer description
+Abrupt doubling of CO2
+ Abrupt doubling of atmospheric CO2
