@@ -21,7 +21,6 @@ DECK: pre-industrial control
 ## Other experiment info
 
 <!--- Start other-experiment-info -->
-Parent experiment: cmip7:experiment/none
 <!--- End other-experiment-info -->
 
 ## Forcings

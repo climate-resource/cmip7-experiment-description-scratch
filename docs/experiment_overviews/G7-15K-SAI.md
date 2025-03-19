@@ -2,20 +2,20 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# G7-15K-SAI
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Describe G7-15K-SAI in one sentence.
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+Stratospheric aerosol injection to reduce warming to 1.5K
+ Stratospheric aerosol injection to reduce warming to 1.5K above pre-industrial levels
 <!--- End longer-description -->
 
 ## Other experiment info

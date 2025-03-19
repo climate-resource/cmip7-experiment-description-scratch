@@ -2,25 +2,25 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# scen7-vlloc-ext
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Very Low, Concentration Driven Scenario Extension with Limited Overshoot
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+Extension to Concentration driven scenario consistent with limiting warming to 1.5 degree C by 2100 AD with limited overshoot (as low as plausible) of 1.5 degree C
 <!--- End longer-description -->
 
 ## Other experiment info
 
 <!--- Start other-experiment-info -->
+Parent experiment: scen7-vlloc
 <!--- End other-experiment-info -->
 
 ## Forcings

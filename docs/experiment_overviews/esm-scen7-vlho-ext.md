@@ -2,25 +2,25 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# esm-scen7-vlho-ext
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Very Low Scenario with Limited Overshoot Extension
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+Extension to scenario with similar end-of-century temperature impact to VLLO, but with less aggressive near-term mitigation and large reliance on net negative emissions, resulting in a higher overshoot.
 <!--- End longer-description -->
 
 ## Other experiment info
 
 <!--- Start other-experiment-info -->
+Parent experiment: esm-scen7-vlho
 <!--- End other-experiment-info -->
 
 ## Forcings

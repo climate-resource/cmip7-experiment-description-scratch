@@ -2,20 +2,20 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# 1pctCO2
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Describe 1pctCO2 in one sentence.
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+DECK: 1 percent per year CO2 increase
+ Increase CO2 concentration from pre-industrial level at 1% per year until quadrupling
 <!--- End longer-description -->
 
 ## Other experiment info

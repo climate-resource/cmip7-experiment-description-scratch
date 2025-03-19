@@ -2,20 +2,20 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# SSPX-SLCF
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Describe SSPX-SLCF in one sentence.
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+Future scenario with specified SLCF emissions
+ Future scenario simulation with specified short-lived climate forcer emissions
 <!--- End longer-description -->
 
 ## Other experiment info

@@ -266,12 +266,6 @@ def main() -> None:
     experiment_files_l = []
     for entry in data["@graph"]:
         experiment_name = entry["label"]
-        if (
-            not experiment_name.startswith("abrupt")
-            and not experiment_name.startswith("historical")
-            and not experiment_name.startswith("piControl")
-        ):
-            continue
 
         doc_file = DOCS_DIR / "experiment_overviews" / f"{experiment_name}.md"
 
@@ -290,7 +284,19 @@ def main() -> None:
         info["experiment_name"] = experiment_name
         info["experiment_one_line_description"] = entry["long-label"]
         info["experiment_longer_description"] = entry["description"]
-        info["parent_experiment"] = entry["parent-experiment"]
+
+        parent_experiment_info = entry["parent-experiment"]
+        if isinstance(parent_experiment_info, str):
+            if parent_experiment_info == "cmip7:experiment/none":
+                info["parent_experiment"] = None
+            else:
+                raise NotImplementedError(parent_experiment_info)
+        else:
+            info["parent_experiment"] = entry["parent-experiment"]["label"]
+            # # Not sure how to process this sensibly, will need to ask Dan
+            # info["parent_experiment_activity"] = (
+            # entry["parent-experiment"]["activity"])
+
         experiment_description = ExperimentDescriptionFile(**info)
 
         doc_file.parent.mkdir(exist_ok=True, parents=True)

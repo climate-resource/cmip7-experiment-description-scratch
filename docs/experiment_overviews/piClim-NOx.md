@@ -2,20 +2,20 @@
 <!--- They are bounded by comments like this -->
 <!--- Do not edit these sections by hand -->
 <!--- Start title -->
-# abrupt-4xCO2
+# piClim-NOx
 <!--- End title -->
 
 ## One-line description
 
 <!--- Start one-line-description -->
-Describe abrupt-4xCO2 in one sentence.
+Describe piClim-NOx in one sentence.
 <!--- End one-line-description -->
 
 ## Longer description
 
 <!--- Start longer-description -->
-DECK: abrupt quadrupling of CO2
- Abrupt increase in CO2 concentration from pre-industrial level to quadrupling
+Perturbation from pre-industrial control using 1850 NOx emissions
+ Pre-industrial climatological SSTs and sea ice extent, 1850 NOx emissions
 <!--- End longer-description -->
 
 ## Other experiment info
