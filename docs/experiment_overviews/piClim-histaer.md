@@ -28,6 +28,6 @@ Effective radiative forcing by historical aerosol concentrations
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

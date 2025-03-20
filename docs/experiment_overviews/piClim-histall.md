@@ -28,6 +28,6 @@ Effective radiative forcing by all historical forcing agents
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

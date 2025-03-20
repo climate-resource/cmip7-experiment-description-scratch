@@ -29,6 +29,6 @@ DECK: pre-industrial control simulation with Earth System Models
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

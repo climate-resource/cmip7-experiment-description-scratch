@@ -130,6 +130,6 @@ These piControl files can be identified by the fact
 that they have "fx" in their filename.
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

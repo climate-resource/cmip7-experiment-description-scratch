@@ -28,6 +28,6 @@ Describe esm-flat10-cdr in one sentence.
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

@@ -28,6 +28,6 @@ Land-only simulation of the historical period
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

@@ -29,6 +29,6 @@ Stratospheric aerosol injection to reduce warming to 1.5K
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

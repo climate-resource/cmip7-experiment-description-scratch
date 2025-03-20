@@ -30,6 +30,6 @@ Parent experiment activity: CMIP
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

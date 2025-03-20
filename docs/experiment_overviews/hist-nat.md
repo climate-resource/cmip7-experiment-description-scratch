@@ -28,6 +28,6 @@ Historical simulation with natural forcing only
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

@@ -28,6 +28,6 @@ AMIP experiment with uniform 4K SST increase
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

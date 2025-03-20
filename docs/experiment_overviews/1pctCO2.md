@@ -29,6 +29,6 @@ DECK: 1 percent per year CO2 increase
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

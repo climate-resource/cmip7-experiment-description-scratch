@@ -29,6 +29,6 @@ Historical simulation with pre-industrial short-lived climate forcers
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

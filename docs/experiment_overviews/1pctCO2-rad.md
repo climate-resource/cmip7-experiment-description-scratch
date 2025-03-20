@@ -28,6 +28,6 @@ Radiatively-coupled version of 1 percent per year CO2 increase experiment
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

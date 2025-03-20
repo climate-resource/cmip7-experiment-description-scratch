@@ -29,6 +29,6 @@ DECK: effective radiative forcing by present day anthropogenic forcings
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

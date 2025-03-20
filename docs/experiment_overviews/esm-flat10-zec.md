@@ -28,6 +28,6 @@ Zero Emissions Commitment (ZEC) experiment following 10 years of constant atmosp
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

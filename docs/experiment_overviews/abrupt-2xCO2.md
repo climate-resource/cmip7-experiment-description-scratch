@@ -43,6 +43,6 @@ which are four times the value used in the piControl experiment should be applie
 No other forcings should be altered from their piControl values.
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

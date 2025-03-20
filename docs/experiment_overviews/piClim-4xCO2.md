@@ -29,6 +29,6 @@ DECK: effective radiative forcing by 4xCO2
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

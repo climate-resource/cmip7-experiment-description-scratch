@@ -28,6 +28,6 @@ AMIP experiment with pre-industrial forcing
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

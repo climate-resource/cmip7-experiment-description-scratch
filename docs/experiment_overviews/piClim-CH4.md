@@ -29,6 +29,6 @@ Perturbation from pre-industrial control using 1850 methane concentrations
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

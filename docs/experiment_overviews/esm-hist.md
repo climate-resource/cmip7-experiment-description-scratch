@@ -29,6 +29,6 @@ DECK: Earth System Model historical simulation
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

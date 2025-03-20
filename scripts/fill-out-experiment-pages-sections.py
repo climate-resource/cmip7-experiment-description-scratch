@@ -88,14 +88,19 @@ def get_label(in_id: str) -> str:
     """
     # This doesn't feel very portable to me, but maybe it is?
     cv_location, tmp = in_id.split(":")
-    facet, id = tmp.split("/")
+    facet, label = tmp.split("/")
 
     url_base = f"{cmipld.locations.mapping[cv_location]}/{facet}"
     GRAPH_URL = f"{url_base}/graph.jsonld"
     CONTEXT_URL = f"{url_base}/_context_"
 
     data_facet = cmipld.jsonld.frame(GRAPH_URL, CONTEXT_URL)
-    info_l = [v for v in data_facet["@graph"] if v["label"] == id]
+    # This should not be needed.
+    # The issue is that the parent-activity varies by entry.
+    # For example, here it uses the ID: https://github.com/WCRP-CMIP/CMIP7-CVs/blob/main/src-data/experiment/esm-scen7-h-ext.json
+    # Here it uses the label: https://github.com/WCRP-CMIP/CMIP7-CVs/blob/main/src-data/experiment/esm-scen7-h.json
+    in_id_lower = in_id.lower()
+    info_l = [v for v in data_facet["@graph"] if v["id"] == in_id_lower]
     if len(info_l) != 1:
         raise AssertionError
 
@@ -120,7 +125,10 @@ def get_other_experiment_info(
 ) -> tuple[OtherExperimentInfo, int]:
     """Get other experiment info from the raw text"""
     exp_end_block = "<!--- End other-experiment-info -->"
-    mapping = {"Parent experiment": "parent_experiment"}
+    mapping = {
+        "Parent experiment": "parent_experiment",
+        "Parent experiment activity": "parent_experiment_activity",
+    }
 
     other_experiment_info_d = {}
     for i, line in enumerate(raw_lines[start_position + 1 :]):
@@ -274,7 +282,7 @@ class ExperimentDescriptionFile:
                 self.forcings_section,
                 "<!--- End forcings -->",
                 "",
-                "## Generating the data",
+                "## Getting the data",
                 "",
                 "<!--- TODO: auto-generate this -->",
             ]
@@ -326,9 +334,17 @@ def main() -> None:
             info["parent_experiment_activity"] = get_label(
                 entry["parent-activity"]["id"]
             )
-            # # Not sure how to process this sensibly, will need to ask Dan
-            # info["parent_experiment_activity"] = (
-            # entry["parent-experiment"]["activity"])
+            # # This can also be done via cmipld directly, but it's crazy slow
+            # parent_experiment_full_l = cmipld.processor.get(
+            #     entry["parent-experiment"]["id"], depth=3
+            # )
+            # if len(parent_experiment_full_l) != 1:
+            #     raise AssertionError(parent_experiment_full_l)
+            #
+            # parent_experiment_full = parent_experiment_full_l[0]
+            # info["parent_experiment_activity"] = parent_experiment_full["activity"][
+            #     "label"
+            # ]
 
         experiment_description = ExperimentDescriptionFile(**info)
 

@@ -29,6 +29,6 @@ Initialised prediction for 2025-2036
 TBD
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->

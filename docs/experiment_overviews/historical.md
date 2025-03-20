@@ -122,6 +122,6 @@ Whichever frequency you use, please document this clearly
 in [TODO recommendation about how to document].
 <!--- End forcings -->
 
-## Generating the data
+## Getting the data
 
 <!--- TODO: auto-generate this -->
