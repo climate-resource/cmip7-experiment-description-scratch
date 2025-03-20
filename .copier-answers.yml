@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier
+_commit: v0.4.1
+_src_path: gl:openscm/copier-basic-python-repository
+email: zebedee.nicholls@climate-resource.com
+name: Zebedee Nicholls
+notebooks: false
+package_manager: uv
+project_description_short: Scratch repository for testing out building of CMIP7 experiment
+    definition docs.
+project_url: https://github.com/climate-resource/cmip7-experiment-description-scratch

@@ -1,0 +1,8 @@
+- validation against CVs (using esgvoc or cmip-ld)
+- figure out what needs to be machine readable (i.e. in some JSON file) and what only needs to be human-readable (i.e. can just live in markdown)
+    - validate that the machine readable stuff meets some spec
+- versioning for machine readable stuff
+- versioning for repo as a whole
+- figure out how much of the old excel sheet (CMIP6_Experiments_v224.xlsx) to use
+- auto-generate page skeletons
+- figure out what other details we need on each page

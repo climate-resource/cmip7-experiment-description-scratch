@@ -1,0 +1,50 @@
+[project]
+name = "local"
+version = "0.1.0"
+description = "Scratch repository for testing out building of CMIP7 experiment definition docs."
+authors = [
+    { name = "Zebedee Nicholls", email = "zebedee.nicholls@climate-resource.com"},
+]
+requires-python = ">=3.9"
+dependencies = [
+    "attrs>=25.3.0",
+    "cmip-ld",
+    "mkdocs>=1.6.1",
+    "mkdocs-literate-nav>=0.6.2",
+    "pre-commit>=3.3.1",
+]
+readme = "README.md"
+
+[build-system]
+requires = [
+    "pdm-backend",
+    "pdm-build-locked",
+]
+build-backend = "pdm.backend"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "D",
+    "PL",
+    "TRY",
+    "NPY",
+    "RUF",
+    "UP",
+    "S",
+]
+unfixable = [ ]
+ignore = [
+    "D200",
+    "D400",
+    "UP007",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.uv.sources]
+cmip-ld = { git = "https://github.com/WCRP-CMIP/CMIP-LD" }
