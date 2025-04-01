@@ -340,16 +340,43 @@ class ExperimentDescriptionFile:
             "<!--- End forcings -->",
         )
 
+        source_ids = []
+        for fi in self.forcings_info:
+            if fi.shorthand == "aerosol-optical-properties":
+                continue
+
+            if fi.source_ids is not None:
+                source_ids.extend(fi.source_ids)
+
+        esgpull_download_lines = [
+            "## Getting the data",
+            "",
+            "If you install [esgpull](https://esgf.github.io/esgf-download/),",
+            "you can download all the data associated with the source IDs above",
+            "with the script shown below.",
+            "Note that this will download all the data",
+            "associated with these source IDs,",
+            "which is likely to be much more data",
+            "than you actually need to run your model.",
+            "",
+            "```sh",
+            "#!/bin/bash",
+            "",
+            f'EXPERIMENT_NAME="{self.experiment_name}"',
+            "",
+            f"esgpull add --track --tag ${{EXPERIMENT_NAME}} source_id:{','.join(source_ids)}",  # noqa: E501
+            "esgpull update --tag ${EXPERIMENT_NAME} --yes",
+            "esgpull download --tag ${EXPERIMENT_NAME}",
+            "```",
+        ]
+
         out_l.extend(
             [
                 "<!--- End other-experiment-info -->",
                 "",
                 *forcings_lines,
                 "",
-                "## Getting the data",
-                "",
-                "<!--- TODO: auto-generate this -->",
-                "TODO: auto-generate an example of how to download this with esgpull",
+                *esgpull_download_lines,
                 "",
             ]
         )

@@ -38,5 +38,20 @@ Where relevant, we also provide further information.
 
 ## Getting the data
 
-<!--- TODO: auto-generate this -->
-TODO: auto-generate an example of how to download this with esgpull
+If you install [esgpull](https://esgf.github.io/esgf-download/),
+you can download all the data associated with the source IDs above
+with the script shown below.
+Note that this will download all the data
+associated with these source IDs,
+which is likely to be much more data
+than you actually need to run your model.
+
+```sh
+#!/bin/bash
+
+EXPERIMENT_NAME="abrupt-2xCO2"
+
+esgpull add --track --tag ${EXPERIMENT_NAME} source_id:CR-CMIP-1-0-0
+esgpull update --tag ${EXPERIMENT_NAME} --yes
+esgpull download --tag ${EXPERIMENT_NAME}
+```
