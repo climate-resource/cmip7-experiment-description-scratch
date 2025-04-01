@@ -1,0 +1,30 @@
+{
+    "piControl": [
+        "anthropogenic-emissions",
+        "biomass-burning-emissions",
+        "land-use",
+        "greenhouse-gas-concentrations",
+        "volcanic",
+        "ozone",
+        "nitrogen-deposition",
+        "solar",
+        "aerosol-optical-properties"
+    ],
+    "historical": [
+        "anthropogenic-emissions",
+        "biomass-burning-emissions",
+        "land-use",
+        "greenhouse-gas-concentrations",
+        "volcanic",
+        "ozone",
+        "nitrogen-deposition",
+        "solar",
+        "aerosol-optical-properties"
+    ],
+    "abrupt-2xCO2": [
+        "co2"
+    ],
+    "abrupt-4xCO2": [
+        "co2"
+    ]
+}

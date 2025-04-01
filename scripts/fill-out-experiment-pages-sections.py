@@ -4,12 +4,15 @@ Fill out the auto-generated sections in our experiment description pages
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
+from typing import Any
 
 import cmipld
 from attrs import asdict, define
 
-DOCS_DIR = Path(__file__).parents[1] / "docs"
+HERE = Path(__file__).parent
+DOCS_DIR = HERE.parents[0] / "docs"
 
 
 def read_until(raw_lines: list[str], line: str, start_position: int) -> int:
@@ -82,9 +85,9 @@ def get_experiment_longer_description(
     return "\n".join(longer_description_l), start_position + i
 
 
-def get_label(in_id: str) -> str:
+def get_info(in_id: str) -> dict[str, Any]:
     """
-    Get a label from its ID
+    Get info from its ID
     """
     # This doesn't feel very portable to me, but maybe it is?
     cv_location, tmp = in_id.split(":")
@@ -106,7 +109,7 @@ def get_label(in_id: str) -> str:
 
     info = info_l[0]
 
-    return info["label"]
+    return info
 
 
 @define
@@ -148,6 +151,33 @@ def get_other_experiment_info(
     return OtherExperimentInfo(**other_experiment_info_d), start_position + i
 
 
+def get_wrapped_esgf_url_for_source_id(source_ids: list[str]) -> str:
+    """
+    Get a wrapped ESGF URL for a given source ID
+    """
+    source_id_str = ", ".join(source_ids)
+    source_id_search = "%22%2C%22".join(source_ids)
+
+    return (
+        f"[{source_id_str}](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&"
+        f"activeFacets=%7B%22source_id%22%3A%5B%22{source_id_search}%22%5D%7D)"
+    )
+
+
+@define
+class ForcingInfo:
+    """Forcing information for use in these docs"""
+
+    shorthand: str
+    """Short-hand used to refer to the forcing"""
+
+    source_ids: list[str]
+    """Source ID(s) of the forcing"""
+
+    further_information: str | None = None
+    """Further details/information"""
+
+
 @define
 class ExperimentDescriptionFile:
     """Experiment description file"""
@@ -167,11 +197,12 @@ class ExperimentDescriptionFile:
     parent_experiment_activity: str | None
     """Parent experiment activity"""
 
-    forcings_section: str
+    forcings_info: tuple[ForcingInfo, ...] | None
     """
-    Section on forcings
+    Forcings info
 
-    Placeholder until we generate this section automatically
+    Keys should be the short-hand for the forcing,
+    values should be the source IDs from which those forcings should be retrieved.
     """
 
     @classmethod
@@ -211,23 +242,24 @@ class ExperimentDescriptionFile:
         )
         other_experiment_info, i = get_other_experiment_info(raw_lines, i)
 
-        i = read_until(
-            raw_lines=raw_lines,
-            line="<!--- Start forcings -->",
-            start_position=i,
-        )
-        i_end_forcings_block = read_until(
-            raw_lines=raw_lines,
-            line="<!--- End forcings -->",
-            start_position=i,
-        )
-        forcings_section = "\n".join(raw_lines[i + 1 : i_end_forcings_block])
+        # i = read_until(
+        #     raw_lines=raw_lines,
+        #     line="<!--- Start forcings -->",
+        #     start_position=i,
+        # )
+        # i_end_forcings_block = read_until(
+        #     raw_lines=raw_lines,
+        #     line="<!--- End forcings -->",
+        #     start_position=i,
+        # )
+        # forcings_section = "\n".join(raw_lines[i + 1 : i_end_forcings_block])
 
         return cls(
             experiment_name=experiment_name,
             experiment_one_line_description=experiment_one_line_description,
             experiment_longer_description=experiment_longer_description,
-            forcings_section=forcings_section,
+            forcings_info=None,
+            # forcings_section=forcings_section,
             **asdict(other_experiment_info),
         )
 
@@ -272,19 +304,53 @@ class ExperimentDescriptionFile:
                 f"Parent experiment activity: {self.parent_experiment_activity}"
             )
 
+        forcings_lines = [
+            "## Forcings",
+            "",
+            "The forcings required for this experiment are listed below.",
+            "For each forcing, we provide a short-hand/common name,",
+            "followed by the source ID from which this forcing should be retrieved.",
+            "Where relevant, we also provide further information.",
+            "",
+            "<!--- Start forcings -->",
+        ]
+        for forcing_info in self.forcings_info:
+            if forcing_info.shorthand == "aerosol-optical-properties":
+                source_id_url = "Available outside ESGF"
+
+            elif forcing_info.source_ids is None:
+                source_id_url = "Not available yet"
+
+            else:
+                source_id_url = get_wrapped_esgf_url_for_source_id(
+                    forcing_info.source_ids
+                )
+
+            fi_l = [
+                f"- {forcing_info.shorthand}: {source_id_url}",
+            ]
+            if forcing_info.further_information is not None:
+                fi_l.append(
+                    f"    - Further information: {forcing_info.further_information}"
+                )
+
+            forcings_lines.extend(fi_l)
+
+        forcings_lines.append(
+            "<!--- End forcings -->",
+        )
+
         out_l.extend(
             [
                 "<!--- End other-experiment-info -->",
                 "",
-                "## Forcings",
-                "",
-                "<!--- Start forcings -->",
-                self.forcings_section,
-                "<!--- End forcings -->",
+                *forcings_lines,
                 "",
                 "## Getting the data",
                 "",
                 "<!--- TODO: auto-generate this -->",
+                "TODO: auto-generate an example of how to download this with esgpull",
+                "",
             ]
         )
 
@@ -298,11 +364,32 @@ def main() -> None:
     GRAPH_URL = "https://raw.githubusercontent.com/WCRP-CMIP/CMIP7-CVs/refs/heads/main/src-data/experiment/graph.jsonld"
     CONTEXT_URL = "https://raw.githubusercontent.com/WCRP-CMIP/CMIP7-CVs/refs/heads/main/src-data/experiment/_context_"
 
+    EXPERIMENT_TO_FORCINGS_FILE = (
+        HERE.parents[0] / "input-data" / "experiment-to-forcings.json"
+    )
+    FORCINGS_TO_SOURCE_ID_FILE = (
+        HERE.parents[0] / "input-data" / "forcings-to-source-id.json"
+    )
+
+    with open(EXPERIMENT_TO_FORCINGS_FILE) as fh:
+        experiment_to_forcings = json.load(fh)
+
+    with open(FORCINGS_TO_SOURCE_ID_FILE) as fh:
+        forcings_to_source_id = json.load(fh)
+
     data = cmipld.jsonld.frame(GRAPH_URL, CONTEXT_URL)
 
     experiment_files_l = []
     for entry in data["@graph"]:
         experiment_name = entry["label"]
+        if experiment_name not in [
+            "historical",
+            "piControl",
+            "abrupt-2xCO2",
+            "abrupt-4xCO2",
+        ]:
+            # Don't generate for now
+            continue
 
         doc_file = DOCS_DIR / "experiment_overviews" / f"{experiment_name}.md"
 
@@ -316,36 +403,29 @@ def main() -> None:
             info = asdict(experiment_description)
 
         else:
-            info = {"forcings_section": "TBD"}
+            info = {}
 
         info["experiment_name"] = experiment_name
         info["experiment_one_line_description"] = entry["long-label"]
         info["experiment_longer_description"] = entry["description"]
 
-        parent_experiment_info = entry["parent-experiment"]
-        if isinstance(parent_experiment_info, str):
-            if parent_experiment_info == "cmip7:experiment/none":
+        parent_experiment_id = entry["parent-experiment"]
+        if isinstance(parent_experiment_id, str):
+            if parent_experiment_id == "cmip7:experiment/none":
                 info["parent_experiment"] = None
                 info["parent_experiment_activity"] = None
             else:
-                raise NotImplementedError(parent_experiment_info)
-        else:
-            info["parent_experiment"] = entry["parent-experiment"]["label"]
-            info["parent_experiment_activity"] = get_label(
-                entry["parent-activity"]["id"]
-            )
-            # # This can also be done via cmipld directly, but it's crazy slow
-            # parent_experiment_full_l = cmipld.processor.get(
-            #     entry["parent-experiment"]["id"], depth=3
-            # )
-            # if len(parent_experiment_full_l) != 1:
-            #     raise AssertionError(parent_experiment_full_l)
-            #
-            # parent_experiment_full = parent_experiment_full_l[0]
-            # info["parent_experiment_activity"] = parent_experiment_full["activity"][
-            #     "label"
-            # ]
+                parent_info = get_info(parent_experiment_id)
+                info["parent_experiment"] = parent_info["label"]
+                parent_activity_info = get_info(parent_info["activity"])
+                info["parent_experiment_activity"] = parent_activity_info["label"]
 
+        forcings_shorthand = experiment_to_forcings[experiment_name]
+        forcings_info = tuple(
+            ForcingInfo(shorthand=sh, **forcings_to_source_id[sh])
+            for sh in forcings_shorthand
+        )
+        info["forcings_info"] = forcings_info
         experiment_description = ExperimentDescriptionFile(**info)
 
         doc_file.parent.mkdir(exist_ok=True, parents=True)
