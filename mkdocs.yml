@@ -8,8 +8,8 @@ repo_url: https://github.com/climate-resource/cmip7-experiment-description-scrat
 
 theme: readthedocs
 
-nav:
-  - Home: index.md
-  - Experiment overviews:
-    - piControl: picontrol.md
-    - historical: historical.md
+plugins:
+  # Make the navigation easier to handle/auto-generate if we wish
+  # https://oprypin.github.io/mkdocs-literate-nav/
+  - literate-nav:
+      nav_file: NAVIGATION.md

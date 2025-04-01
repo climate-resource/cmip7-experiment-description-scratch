@@ -1,0 +1,38 @@
+{
+    "anthropogenic-emissions": {
+        "source_ids": [
+            "CEDS-CMIP-2025-03-18", "CEDS-CMIP-2025-03-18-supplemental"
+        ],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/anthropogenic-slcf-co2-emissions/"
+    },
+    "biomass-burning-emissions": {
+        "source_ids": [ "DRES-CMIP-BB4CMIP7-2-0" ],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/open-biomass-burning-emissions/"
+    },
+    "land-use": {
+        "source_ids": ["UofMD-landState-3-1-1"],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/land-use/"
+    },
+    "greenhouse-gas-concentrations": {
+        "source_ids": ["CR-CMIP-1-0-0"],
+        "further_information": "There are multiple options for how to get the radiative effect of all greenhouse gases, for details see https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/#species-provided"
+    },
+    "co2": {
+        "source_ids": ["CR-CMIP-1-0-0"],
+        "further_information": "CO2 data has the variable_id `co2`, this is a change from CMIP6 where the variable_id was `mole_fraction_of_carbon_dioxide` (see https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/#variable-name-mapping)"
+    },
+    "volcanic": {
+        "source_ids": ["UOEXETER-CMIP-2-0-0"],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/stratospheric-volcanic-so2-emissions-aod/"
+    },
+    "ozone": {"source_ids": null},
+    "nitrogen-deposition": {"source_ids": null},
+    "solar": {
+        "source_ids": ["SOLARIS-HEPPA-CMIP-4-6"],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/solar/"
+    },
+    "aerosol-optical-properties": {
+        "source_ids": ["https://doi.org/10.5281/zenodo.14512962"],
+        "further_information": "https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/aerosol-optical-properties-macv2-sp/"
+    }
+}
