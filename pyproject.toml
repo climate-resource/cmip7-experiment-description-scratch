@@ -13,6 +13,7 @@ dependencies = [
     "mkdocs>=1.6.1",
     "mkdocs-literate-nav>=0.6.2",
     "pre-commit>=3.3.1",
+    "pyld>=2.0.4",
 ]
 readme = "README.md"
 
